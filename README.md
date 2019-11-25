@@ -13,26 +13,36 @@ $ serverless config credentials --provider aws --key KEY --secret SECRET_KEY
 7. start deploment using below command
 $serverless deploy
 
-===========================================================================================================
-Cmd Output - for ref.
+______________________
+$ serverless deploy
+Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+Serverless: Uploading CloudFormation file to S3...
+Serverless: Uploading artifacts...
+Serverless: Uploading service serverless-test.zip file to S3 (25.2 MB)...
+
+Serverless: Validating template...
+Serverless: Updating Stack...
+Serverless: Checking Stack update progress...
+....................
 Serverless: Stack update finished...
 Service Information
 service: serverless-test
-stage: dev
+stage: production
 region: us-east-1
-stack: serverless-test-dev
+stack: serverless-test-production
 resources: 15
 api keys:
   None
 endpoints:
-  GET - CLICK URL HERE
+  GET - https://0kj5ct62ud.execute-api.us-east-1.amazonaws.com/production/users/create
 functions:
-  getGreeting: serverless-test-dev-getGreeting
-  getGreetingLambdaOnly: serverless-test-dev-getGreetingLambdaOnly
+  getGreeting: serverless-test-production-getGreeting
+  getGreetingLambdaOnly: serverless-test-production-getGreetingLambdaOnly
 layers:
   None
 Serverless: Run the "serverless" command to setup monitoring, troubleshooting and testing.
-===========================================================================================================
+______________________
 
 To deploy it to uat/prod change the value of stage variable in serverless.yml
 
