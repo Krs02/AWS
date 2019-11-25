@@ -1,19 +1,20 @@
-Steps: 
+Please Follow below Steps: 
 
-1. npm i -g serverless
-2. serverless create template and provide template like node or java
+1. Install serverless node module 
+$npm i -g serverless
+2. create serverless template, Boilerplate to start with.
 cmd  : serverless create -t aws-nodejs
-tempalte will be created, remove unwanted from serverless yml file.
-3. Define your code in lambda,
-4. To deploy code in aws we need secret and access key.
-5. run this cmd
+Folder structure will be created,
+3. Define project specific url/function-name, remove unwanted content from serverless yml file.
+4. Define your project specific code in lambda,
+5. To deploy code in aws we need to add secret and access key. run below cmd to add
 $ serverless config credentials --provider aws --key KEY --secret SECRET_KEY
-6. now its setup account where to deploy
-7. to deploy run
-cmd : serverless deploy
+6. above step will setup your account for deployment
+7. start deploment using below command
+$serverless deploy
 
-Output
-
+===========================================================================================================
+Cmd Output - for ref.
 Serverless: Stack update finished...
 Service Information
 service: serverless-test
@@ -31,13 +32,9 @@ functions:
 layers:
   None
 Serverless: Run the "serverless" command to setup monitoring, troubleshooting and testing.
+===========================================================================================================
 
-
-
-===
-
-To deploy it to uat/prod
-change the stage in serverless.yml
+To deploy it to uat/prod change the value of stage variable in serverless.yml
 
 
 
